@@ -16,3 +16,15 @@
 // It's 11h. Time to train!
 // It's 12h. Time to train!
 // It's 13h. Time to eat!
+let activity = '';
+for (i = 0; i <= 23; i++) {
+    activity = 'train';
+    if (i < 22 && i > 5 ) {
+        if ((i === 7) || (i === 13) || (i === 18)){
+            activity = 'eat';
+        }
+    } else {
+        activity = 'sleep'
+    }
+    console.log('It\'s ' + i + 'h. Time to ' + activity + '!');
+}
