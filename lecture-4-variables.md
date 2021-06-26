@@ -43,11 +43,11 @@ For clarity, we often want to name variables with multi-word expressions.
 There are many ways to do this.
 
 - Camel Case
-    - ``
+    - `myNameIsShai`
 - Dashes
-    - ``
+    - `my-name-is-shai` *this doe not work*
 - Underscores
-    - ``
+    - `my_name_is_shai`
 
 ---
 

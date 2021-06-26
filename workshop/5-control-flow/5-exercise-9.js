@@ -17,3 +17,25 @@
 // _#_#_#_#
 // #_#_#_#_
 // _#_#_#_#
+let print = '';
+for (let i = 0; i < 8; i++) {
+    if (i % 2 === 0) {
+        for (let y = 0; y < 8; y++) {
+            if (y % 2 === 0) {
+                print += '#';
+            } else {
+            print += '_';
+            }
+        }
+    } else {
+        for (let y = 0; y < 8; y++) {
+            if (y % 2 === 0) {
+                print += '_';
+            } else {
+            print += '#';
+            }
+        }
+    }
+    print += "\n"
+}
+console.log(print);

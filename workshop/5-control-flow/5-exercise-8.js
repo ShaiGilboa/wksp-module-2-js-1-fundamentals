@@ -13,3 +13,12 @@
 // #####
 // ######
 // #######
+let j = 0;
+let print = '';
+for (let i = 0; i <= 7; i++) {
+    for (j = 0; j <= i; j++) {
+        print += '#';
+    }
+    console.log(print);
+    print = '';
+}

@@ -13,7 +13,12 @@ There are 6 basic types in JavaScript.
 
 ```js
 // Examples
-
+"bacon"
+true
+null
+123
+[1,2,3,4]
+{name: 'fred', 4}
 ```
 
 If you are not sure of the type of a given value, you can use `typeof <VALUE>`
@@ -32,7 +37,7 @@ They are equally good... sort of.
 
 ---
 
-### Backticks \`\`
+### Backticks \`\` (string literals)
 
 - Strings wrapped in backticks have a super power called, interpolation.
 - Interpolation is a way of inserting JavaScript into your strings.
@@ -54,7 +59,7 @@ let introduction = `The area of a circle is π^2.`
 let example = `So a ${diameter} pizza has an area of ${pi * radius * radius}.`
 
 // Concatenate the strings
-let text = intro + ' ' + example
+let text = introduction + ' ' + example
 
 console.log(text);
 // The area of a circle is π^2. So a 14 pizza has an area of 153.86.
@@ -160,13 +165,21 @@ Of course comparison operators and logical operators are usually combined in an 
 // Look at these expressions below and determine whether they evaluate to true or false
 
 1. true || false
+`true`
 2. false && false
+`false`
 3. 1 < 2 && 2 > 1
+`true`
 4. 31 < 13 || 1 < 2 && 3 > 1
+`true`
 5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31)
+`true`
 6. true && false && false || false && true
+`false`
 7. true && false || true || false
+`true`
 8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1
+`true`
 ```
 
 ---
@@ -222,7 +235,7 @@ For more details, you can check out this [Sitepoint page](https://www.sitepoint.
 - Arrays are sequences of anything. Strings, numbers, booleans, arrays, other things we haven't learned about yet.
 - You can declare an array by using [ ] square brackets.
 - We separate the elements of an array with a comma.
-- Arrays are mutable.
+- Arrays are mutable. (changeable)
 
 ```js
 ['bacon', undefined, 900, true]
@@ -256,7 +269,9 @@ let anArrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let anArrayOfNumbers = ['bacon', undefined, 900, true]
 
 1. How do we access the value 900?
+anArrayOfNumbers[2]
 2. How do we access the value `true`?
+anArrayOfNumbers[3]
 
 ```
 
@@ -281,6 +296,7 @@ let table = [
 2. table[5][5]
 3. table[2][3]
 4. How would we access the value 27?
+table[4][2]
 ```
 
 ---
@@ -294,8 +310,11 @@ let data = [0, [], [], [1,2,3, [4]]]
 ```
 
 1. How would you access the value `0`?
+data[0]
 2. How would you access the value `3`?
+data[3][2]
 3. How would you access the value `4`?
+data[3][3][0]
 
 ---
 
@@ -304,15 +323,16 @@ let data = [0, [], [], [1,2,3, [4]]]
 Very broadly, an object can be defined as an unordered collection of key/value pairs. 
 
 `{'givenName': 'Yoda', 'surname': undefined, 'age': 900}`
+`{key0:value(of key0), key1:value(ofkey1,)}`
 
 This object has 3 properties.
 
 ```js
 // Example
 "it has a property with name 'givenName' and value of 'Yoda' of type string"
-
+{givenName : 'Yoda'}
 ```
-
+A key can be with or without qoutes, if you want a space you need to use qoutes, and `-` dosen't work.
 ---
 
 # Exercise
@@ -323,7 +343,7 @@ Group the following items together according to their type:
 
 `'hello'`, `0`, `['mouse', 'cat', 'dog']`, `'cat'`, `false`,
 
-`null`, `7` `'42'`, `{product: 'cake', price: '50$'}`,
+`null`, `7`, `'42'`, `{product: 'cake', price: '50$'}`,
 
 `undefined`,` ['coconut', 24, 'banana']`, `-99`
 
@@ -344,6 +364,7 @@ Group the following items together according to their type:
 
 ```js
 { label: 'corn', price: 5.3 + '$' };
+property: label: 'corn', key: label, value: 'corn'
 { ISBN: 53532, isAvailable: true, author: 'Nakamoto' };
 
 ```
@@ -360,7 +381,9 @@ Values in objects can be accessed with
 ```js
 // Example
 let person = {name: 'Bob', age: 23};
+person.name //'Bob'
 const otherPerson = {name: 'Joe', age: 31, height: '170cm'};
+otherPerson['age'] //'31' has to be the string value
 
 ```
 
@@ -374,9 +397,9 @@ let person = {name: 'Bob', age: 23};
 let name = 'John';
 
 // What is the value of the following expressions?
-1. person.name
-2. person['name']
-3. person[name]
+1. person.name //'Bob'
+2. person['name'] //'Bob'
+3. person[name] //undefined 
 
 ```
 
@@ -391,9 +414,9 @@ let person = {name: 'bob', age: 23};
 let key = 'name';
 
 // What is the value of the following expressions:
-1. person.key
-2. person['key']
-3. person[key]
+1. person.key // undefined
+2. person['key'] // undefined
+3. person[key] // 'bob'
 
 ```
 
